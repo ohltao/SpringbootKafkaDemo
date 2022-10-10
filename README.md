@@ -61,5 +61,5 @@ znode有两种类型：ephemeral 和 persistent。在创建znode时，我们指�
 #### 使用kafka客户端创建topic
 
 ~~~shell
-docker run -it --rm --network app-tier -e KAFKA_CFG_ZOOKEEPER_CONNECT=zookeeper-server:2181 bitnami/kafka kafka-topics.sh --create  --bootstrap-server kafka-server:9092 --replication-factor 1 --partitions 1 --topic mytest
+docker run -it --rm  --link kafka  -e AFKA_CFG_ZOOKEEPER_CONNECT=zookeeper-server:2181   bitnami/kafka:latest kafka-topics.sh --create  --bootstrap-server kafka:9092 --replication-factor 1 --partitions 1 --topic mytest
 ~~~
