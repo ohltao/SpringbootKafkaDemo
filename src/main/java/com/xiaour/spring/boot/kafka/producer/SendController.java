@@ -12,9 +12,14 @@ public class SendController {
     @Resource
     private Producer producer;
 
-    @RequestMapping(value = "/send")
-    public Boolean send() {
-        producer.send();
+    @RequestMapping(value = "/sendTest1")
+    public Boolean send1() {
+        producer.send1();
+        return Boolean.TRUE;
+    }
+    @RequestMapping(value = "/sendTest2")
+    public Boolean send2() {
+        producer.send2();
         return Boolean.TRUE;
     }
 }

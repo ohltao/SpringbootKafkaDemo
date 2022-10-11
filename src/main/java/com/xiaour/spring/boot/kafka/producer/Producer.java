@@ -20,12 +20,19 @@ public class Producer {
     private static final Gson gson = new GsonBuilder().create();
 
     //发送消息方法
-    public void send() {
+    public void send1() {
         Message message = new Message();
         message.setId("KFK_"+System.currentTimeMillis());
         message.setMsg(UUID.randomUUID().toString());
         message.setSendTime(new Date());
-        kafkaTemplate.send("mytest", gson.toJson(message));
+        kafkaTemplate.send("test1", gson.toJson(message));
     }
-
+    //发送消息方法
+    public void send2() {
+        Message message = new Message();
+        message.setId("KFK_"+System.currentTimeMillis());
+        message.setMsg(UUID.randomUUID().toString());
+        message.setSendTime(new Date());
+        kafkaTemplate.send("test2", gson.toJson(message));
+    }
 }
